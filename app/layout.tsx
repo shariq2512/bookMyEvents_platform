@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: "bookMyEvents",
   description: "bookMyEvents is a platform for event management",
   icons: {
-    icon: '/assets/images/bookMyEvents.png'
+    icon: '/assets/images/bookMyEvents.svg'
   }
 };
 
@@ -26,7 +26,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <head>
-          <link rel="icon" href="/assets/images/bookMyEvents.png" type="image/svg+xml" />
+          <link rel="icon" href="/assets/images/bookMyEvents.svg" type="image/svg+xml" />
         </head>
         <body className={poppins.variable}>{children}</body>
       </html>
