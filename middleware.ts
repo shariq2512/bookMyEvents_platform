@@ -11,7 +11,15 @@ const isPublicRoute = createRouteMatcher([
 ]);
 
 export default clerkMiddleware((auth, request) => {
-  if(!isPublicRoute(request)) {
+  const url = request.url;
+
+  // Directly allow the webhook route
+  if (url.startsWith('/api/webhook/stripe')) {
+    return;
+  }
+
+  // Protect all other non-public routes
+  if (!isPublicRoute(request)) {
     auth().protect();
   }
 });
